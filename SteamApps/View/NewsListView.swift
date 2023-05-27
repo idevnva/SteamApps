@@ -15,7 +15,7 @@ struct NewsListView: View {
     
     var body: some View {
         NavigationStack {
-            ScrollView {
+            ScrollView(showsIndicators: false) {
                 HStack {
                     Text(newsTitle)
                         .font(.title)
