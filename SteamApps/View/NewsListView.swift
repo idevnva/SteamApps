@@ -32,6 +32,7 @@ struct NewsListView: View {
                                     HStack {
                                         Text(item.title)
                                             .foregroundColor(Color("textMain"))
+                                            .multilineTextAlignment(.leading)
                                         Spacer()
                                     }
                                 }
