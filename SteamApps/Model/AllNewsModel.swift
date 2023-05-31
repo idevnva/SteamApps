@@ -23,4 +23,5 @@ struct AppNews: Codable {
 struct NewsItem: Codable {
     let title, contents: String
     let appid: Int32
+    let gid: String
 }

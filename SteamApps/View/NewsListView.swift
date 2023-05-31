@@ -27,7 +27,7 @@ struct NewsListView: View {
                         if allNews.appnews.count == 0 {
                             NoNewsView()
                         } else {
-                            ForEach(allNews.appnews.newsitems, id: \.title) { item in
+                            ForEach(allNews.appnews.newsitems, id: \.gid) { item in
                                 NavigationLink(destination: FullNewsView(title: item.title, contents: item.contents)) {
                                     HStack {
                                         Text(item.title)

@@ -15,19 +15,10 @@ struct FullNewsView: View {
     
     var body: some View {
         NavigationStack {
-            ScrollView(showsIndicators: false) {
-                VStack(alignment: .leading) {
-                    HStack {
-                        Text(contents)
-                        Spacer()
-                    }
-                    .padding()
-                    .frame(maxHeight: .infinity)
-                    .background(Color("mainBG"))
-                    .cornerRadius(10)
-                }
-                .padding()
+            VStack(alignment: .leading) {
+                HTMLView(htmlString: contents)
             }
+            .padding()
             .navigationTitle(title)
             .navigationBarTitleDisplayMode(.inline)
         }
@@ -36,6 +27,7 @@ struct FullNewsView: View {
 
 struct FullNewsView_Previews: PreviewProvider {
     static var previews: some View {
-        FullNewsView(title: "", contents: "")
+        FullNewsView(title: "title", contents: "contents")
+            .environmentObject(NewsViewModel())
     }
 }

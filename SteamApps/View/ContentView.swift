@@ -50,7 +50,7 @@ struct ContentView: View {
             if searchText.isEmpty {
                 return allApp.applist.apps
             } else {
-                return allApp.applist.apps.filter { $0.name.contains(searchText)}
+                return allApp.applist.apps.filter { $0.name.localizedCaseInsensitiveContains(searchText)}
             }
         }
         return []
