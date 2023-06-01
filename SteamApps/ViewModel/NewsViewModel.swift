@@ -9,9 +9,9 @@ import Foundation
 
 class NewsViewModel: ObservableObject {
     @Published var allNews: AllNews?
-
+    
     func loadNews(appid: Int32) {
-
+        
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "api.steampowered.com"
@@ -21,9 +21,9 @@ class NewsViewModel: ObservableObject {
             URLQueryItem(name: "appid", value: "\(appid)"),
             URLQueryItem(name: "maxlength", value: "0")
         ]
-
+        
         guard let url = urlComponents.url else { return }
-
+        
         let task = URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data = data, error == nil else { return }
             do {

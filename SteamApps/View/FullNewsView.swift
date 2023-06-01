@@ -18,7 +18,6 @@ struct FullNewsView: View {
             VStack(alignment: .leading) {
                 HTMLView(htmlString: contents)
             }
-            .padding()
             .navigationTitle(title)
             .navigationBarTitleDisplayMode(.inline)
         }
