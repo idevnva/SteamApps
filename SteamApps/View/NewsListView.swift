@@ -60,7 +60,6 @@ struct NewsListView: View {
     }
 }
 
-
 struct NewsListView_Previews: PreviewProvider {
     static var previews: some View {
         NewsListView(appid: 2154000, newsTitle: "App")

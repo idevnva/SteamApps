@@ -8,6 +8,7 @@
 import SwiftUI
 import WebKit
 
+// MARK:  Методы для отображения HTML страниц вместо обычного текста
 struct HTMLView: UIViewRepresentable {
     let htmlString: String
 

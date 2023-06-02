@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var appVM = AppViewModel()
+    @StateObject var appVM = AppViewModel()
     
     var body: some View {
         NavigationStack {
@@ -32,9 +32,9 @@ struct ContentView: View {
                     }
                 }
             }
-            .searchable(text: $appVM.searchText)
             .padding(.horizontal)
             .navigationTitle("Steam Apps")
+            .searchable(text: $appVM.searchText)
             .refreshable {
                 appVM.loadApp()
             }
@@ -48,5 +48,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(AppViewModel())
     }
 }
